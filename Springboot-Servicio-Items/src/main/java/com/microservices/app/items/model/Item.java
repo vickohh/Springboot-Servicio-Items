@@ -44,4 +44,12 @@ public class Item {
     public String getCustomInfo() {
         return "test nombre  Info";
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "producto=" + producto +
+                ", cantidad=" + cantidad +
+                '}';
+    }
 }

@@ -25,10 +25,7 @@ public class ProductoController {
 
     @GetMapping(value = "/listar")
     public List<Producto> listar() {
-        return productoService.findAll().stream().map(producto -> {
-            producto.setPort(env);
-            return producto;
-        }).toList();
+        return productoService.findAll().stream().peek(producto -> producto.setPort(env)).toList();
     }
 
     @GetMapping(value = "/ver/{id}")

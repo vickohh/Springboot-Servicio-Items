@@ -8,12 +8,17 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service()
+@Service
 @Primary
 public class ItemServiceFeingImpl implements ItemService{
 
+
+    private final ProductoClienteRest productoClienteRest;
+
     @Autowired
-    private ProductoClienteRest productoClienteRest;
+    public ItemServiceFeingImpl(ProductoClienteRest productoClienteRest) {
+        this.productoClienteRest = productoClienteRest;
+    }
 
     @Override
     public List<Item> findAll() {
